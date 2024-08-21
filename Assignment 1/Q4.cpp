@@ -1,38 +1,33 @@
 #include <iostream>
+using namespace std;
 
 void printBinary(int number) {
-    const int bits = sizeof(int) * 8; // Calculate the number of bits in an int
-    std::cout << number << " in binary: ";
+    const int bits = sizeof(int) * 8;
+    cout << number << " in binary: ";
 
-    // Iterate through each bit from the most significant to the least significant
     for (int i = bits - 1; i >= 0; --i) {
-        int bit = (number >> i) & 1; // Right shift and mask to get the bit value
-        std::cout << bit;
+        int bit = (number >> i) & 1;
+        cout << bit;
     }
-    std::cout << std::endl;
+    cout << endl;
 }
 
 void verifyTwosComplement(int number) {
-    // Two's complement verification using bitwise NOT and add 1
     int twosComplement = (~(-number)) + 1;
-    std::cout << "Two's complement verification:" << std::endl;
-    std::cout << "Original negative number: " << number << std::endl;
-    std::cout << "Computed Two's complement: " << twosComplement << std::endl;
-    std::cout << "Are they equal? " << (number == twosComplement ? "Yes" : "No") << std::endl;
+    cout << "Two's complement verification:" << endl;
+    cout << "Original negative number: " << number << endl;
+    cout << "Computed Two's complement: " << twosComplement << endl;
+    cout << "Are they equal? " << (number == twosComplement ? "Yes" : "No") << endl;
 }
 
 int main() {
     int positiveNum = 25;
     int negativeNum = -25;
-
-    std::cout << "Positive number:" << std::endl;
+    cout << "Positive number:" << endl;
     printBinary(positiveNum);
-
-    std::cout << "\nNegative number:" << std::endl;
+    cout << "\nNegative number:" << endl;
     printBinary(negativeNum);
-
-    std::cout << "\nTwo's Complement Verification:" << std::endl;
+    cout << "\nTwo's Complement Verification:" << endl;
     verifyTwosComplement(negativeNum);
-
     return 0;
 }
