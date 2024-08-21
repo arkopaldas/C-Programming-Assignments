@@ -15,5 +15,20 @@ int main() {
     cout << "vowel2-vowel1 : " << v21 << endl;
     cout << "vowel5-vowel2 : " << v52 << endl;
     cout << "capVowel2-capVowel1 : " << cv21 << endl;
+
+    double y;
+    cout << "Enter a value : ";
+    cin >> y;
+    cout << "x = y - 20 * 6 / 9 : " << y - 20 *6/9 << endl;
+    
+    /* No this does not return the intended answer
+    since 6/9 returns an integer value. */
+    
+    cout << "x = y - 20 * 6 / 9 : " << y - 20.0 * 6.0/9.0 << endl;
+
+    /* Yes this returns the intended answer since all the numbers
+    are converted to their floating point equivalent. Thus this expression 
+    returns the intended answer. */
+    
     return 0;
 }
