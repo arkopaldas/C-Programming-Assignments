@@ -26,9 +26,9 @@ int main() {
     
     cout << "x = y - 20 * 6 / 9 : " << y - 20.0 * 6/9 << endl;
 
-    /* Yes this returns the intended answer since all the numbers
-    are converted to their floating point equivalent. Thus this expression 
-    returns the intended answer. */
+    /* Yes this returns the intended answer since one of the number
+    is converted to its floating point equivalent. Thus this expression 
+    returns the floating number which is the intended answer. */
     
     return 0;
 }
