@@ -24,7 +24,7 @@ int main() {
     /* No this does not return the intended answer
     since 6/9 returns an integer value. */
     
-    cout << "x = y - 20 * 6 / 9 : " << y - 20.0 * 6.0/9.0 << endl;
+    cout << "x = y - 20 * 6 / 9 : " << y - 20.0 * 6/9 << endl;
 
     /* Yes this returns the intended answer since all the numbers
     are converted to their floating point equivalent. Thus this expression 
