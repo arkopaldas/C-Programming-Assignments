@@ -1,26 +1,16 @@
-
 #include <iostream>
-#include <cmath>
+using namespace std;
 
-int main() {
-    // Input variables
-    double number;
+int main(){
+    long double x, rounded;
     int k;
-
-    // Reading the number and k from the user
-    std::cout << "Enter the real number: ";
-    std::cin >> number;
-    std::cout << "Enter the positive integer k: ";
-    std::cin >> k;
-
-    // Calculating the multiplier as 10^k
-    double multiplier = pow(10, k);
-
-    // Rounding off the number to the nearest k-th place
-    double roundedNumber = std::round(number * multiplier) / multiplier;
-
-    // Displaying the result
-    std::cout << "The rounded off number is: " << roundedNumber << std::endl;
-
+    cout << "Enter the real number: ";
+    cin >> x;
+    cout << "Enter the positive integer k: ";
+    cin >> k;
+    rounded = x*k;
+    rounded = (long int) (rounded + 0.5f);
+    rounded /=k;
+    cout << "The rounded off number is: " << rounded << endl;
     return 0;
 }
