@@ -1,8 +1,8 @@
 #include <ctype.h>
 #include <string.h>
 #include <iostream>
-#include "revword.h"
-#include "revword.cpp"
+#include "revwords.h"
+#include "revwords.cpp"
 
 using namespace std;
 
