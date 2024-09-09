@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <iostream>
-#include "reverse.h"
+#include "revword.h"
 #include "revword.cpp"
 
 using namespace std;
