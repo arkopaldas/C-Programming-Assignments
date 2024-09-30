@@ -8,7 +8,8 @@ using namespace std;
 
 int main() {
     char str[] = "University of Cambridge!";
+    cout << "Original String : " << str << endl;
     reverse_words(str);
-    cout << str << endl;
+    cout << "Reverse String : " << str << endl;
     return 0;
 }
