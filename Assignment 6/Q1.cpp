@@ -4,19 +4,18 @@ class myvector {
     int *p;               // base pointer of the vector
     unsigned int size;    // size of the vector
     bool shallow;         // flag indicating if this is a shallow copy
-
+    int count = 1;
 public:
     /*create an empty vector */
     myvector() : p(nullptr), size(0), shallow(false) {}
 
     /* create a vector of length size initialized to 0 */
-    myvector(unsigned int n) : size(n), shallow(false) {
-        p = new int[size]();
-    }
+    myvector(unsigned int n) : size(n), shallow(false) { p = new int[size](); }
 
     /*copy constructor. Can be shallow or deep depending on the option */
     myvector(myvector& v, bool shallow=true) : size(v.size), shallow(shallow) {
         if (shallow) {
+            v.count++;
             p = v.p;
         } else {
             p = new int[size];
@@ -27,19 +26,13 @@ public:
     }
 
     /* return the base pointer to the vector */
-    int* get_ptr() const {
-        return p;
-    }
+    int* get_ptr() const { return p; }
 
     /* return the size of the vector */
-    constexpr unsigned int get_size() const {
-        return size;
-    }
+    constexpr unsigned int get_size() const { return size; }
 
     /* Return the shallow flag */
-    bool is_shallow() const {
-        return shallow;
-    }
+    bool is_shallow() const { return shallow; }
 
     /*update the element at index i with val*/
     void update(unsigned int i, int val) {
@@ -80,6 +73,8 @@ public:
     ~myvector() {
         if (!shallow && p != nullptr) {
             delete[] p;
+        } else if (--count == 0){
+            delete[] p; // Shallow copies are released when no instances of copies remain.
         }
     }
 };
