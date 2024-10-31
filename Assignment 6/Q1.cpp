@@ -74,7 +74,7 @@ public:
         if (!shallow && p != nullptr) {
             delete[] p;
         } else if (--count == 1){
-            delete[] p; // Shallow copies are released when no instances of copies remain.
+            delete p; // Shallow copies are released when no instances of copies remain.
         }
     }
 };
